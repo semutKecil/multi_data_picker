@@ -13,14 +13,12 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
 ## ✨ Features
 
 - ✅ Generic support for any data type `T`
-- 🧱 Custom display builder for selected items
-- 🪟 Configurable popup picker type (`dialog`, `page`, `bottom`)
-- 🎛️ Optional controller for external state management
-- 🧩 Initial value support
-- 📐 Fine-grained layout and padding controls
-- 🔄 Hooks for change detection
-- 📏 Height and spacing customization
-- 🧮 Compensation options for layout alignment
+- 🧱 Custom display builder (text or widget)
+- 🪟 Popup picker: `dialog`, `page`, or `bottom`
+- 🎛️ Controller support for external state management
+- 🧩 TextField-style appearance via `InputDecoration`
+- 🔄 Initial value and change detection hooks
+- 📐 Layout, spacing, and tile styling options
 
 ---
 
