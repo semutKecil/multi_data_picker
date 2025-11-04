@@ -140,32 +140,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      MultiDataPicker<Map<String, dynamic>>(
-                        controller: controller,
-                        decoration: InputDecoration(
-                          labelText: "Fix Height",
-                          prefixIcon: Icon(Icons.location_city),
-                          hintText: "Pick Multiple Region",
-                          helperText: "This is BottomSheet mode with border",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                        ),
-                        minHeight: 100,
-                        dataDisplayBuilder: DataDisplayBuilder.string(
-                          labelBuilder: (data) {
-                            return data['name'] ?? "-";
-                          },
-                        ),
-                        popupType: DataPickerPopupType.bottom(
-                          loadData: loadData,
-                          listDataBuilder: ListDataBuilder.string(
-                            labelBuilder: (data) => data['name'] ?? "-",
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
                       MultiDataPicker<Map<String, dynamic>>(
                         controller: controller,
                         decoration: InputDecoration(

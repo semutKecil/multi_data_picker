@@ -1,12 +1,10 @@
 # 🧮 MultiDataPicker
 
+![Pub Version](https://img.shields.io/pub/v/multi_data_picker) ![Platform](https://img.shields.io/badge/platform-flutter-blue) [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns) [![Donate on Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat)](https://ko-fi.com/M4M81N5IYI)
+
 `multi_data_picker` is a customizable multi-select widget for Flutter, inspired by the UX of [Select2](https://select2.org/) and architecturally based on the `any_field` pattern. It allows users to select multiple values from dynamic data sources with support for generic types, popup customization (`dialog`, `page`, `bottom`), and external state control via `MultiPickerController`.
 
 Designed to integrate seamlessly into form layouts, it supports full `TextField` styling via `InputDecoration`, making it visually consistent with standard Flutter input fields. Ideal for filter panels, tag selectors, and data-driven workflows.
-
-![Pub Version](https://img.shields.io/pub/v/multi_data_picker) ![Platform](https://img.shields.io/badge/platform-flutter-blue) [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M81N5IYI)
 
 ---
 
@@ -19,6 +17,19 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
 - 🧩 TextField-style appearance via `InputDecoration`
 - 🔄 Initial value and change detection hooks
 - 📐 Layout, spacing, and tile styling options
+
+---
+
+Here’s a clean and contributor-friendly demo section you can add to your `README.md`, complete with space for five screenshots and descriptions:
+
+---
+
+## 📸 Demo
+
+|  |  |  |
+|----------|------|-------------|
+| ![Fix Height Bottom](screenshots/multi_picker_fix_height_bottom.gif) | ![Dialog Picker](screenshots/multi_picker_no_border_dialog.gif) | ![Page Picker](screenshots/multi_picker_no_border_page.gif) |
+| ![Custom](screenshots/multi_picker_no_border_custom.gif) | ![Use Controller](screenshots/multi_picker_no_border_ctrl.gif) |   |
 
 ---
 
@@ -334,11 +345,16 @@ We welcome contributions! Feel free to open issues, submit pull requests, or sug
 ```bash
 git clone https://github.com/your-org/multi_data_picker.git
 ```
+---
+
+## ☕ Support This Project
+
+If you find `multi_data_picker` helpful, consider supporting its development:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M81N5IYI)
 
 ---
 
 ## 📄 License
 
 MIT License - see the [LICENSE](LICENSE) file for details
-
----
