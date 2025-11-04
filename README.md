@@ -20,10 +20,6 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
 
 ---
 
-Here’s a clean and contributor-friendly demo section you can add to your `README.md`, complete with space for five screenshots and descriptions:
-
----
-
 ## 📸 Demo
 
 | Fix Height | Dialog Picker | Page Picker |
