@@ -26,9 +26,10 @@ Here’s a clean and contributor-friendly demo section you can add to your `READ
 
 ## 📸 Demo
 
-|  |  |  |
+| Fix Height | Dialog Picker | Page Picker |
 |----------|------|-------------|
 | ![Fix Height Bottom](screenshots/multi_picker_fix_height_bottom.gif) | ![Dialog Picker](screenshots/multi_picker_no_border_dialog.gif) | ![Page Picker](screenshots/multi_picker_no_border_page.gif) |
+| Custom | Use Controller |-------------|
 | ![Custom](screenshots/multi_picker_no_border_custom.gif) | ![Use Controller](screenshots/multi_picker_no_border_ctrl.gif) |   |
 
 ---
