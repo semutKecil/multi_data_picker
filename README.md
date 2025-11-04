@@ -86,13 +86,10 @@ MultiDataPicker<Map<String, dynamic>>(
 | `controller` | `MultiPickerController<T>?` | Optional controller to manage selected values ([see details](#-multipickercontroller)) |
 | `initialValue` | `List<T>?` | Initial selected values |
 | `decoration` | `InputDecoration` | Input field decoration |
-| `displayPadding` | `EdgeInsets` | Padding around displayed items |
 | `onChanged` | `Function(List<T>)?` | Callback when selection changes |
 | `displaySpacing` | `double` | Horizontal spacing between items |
 | `displayRunSpacing` | `double` | Vertical spacing between wrapped items |
 | `minHeight` / `maxHeight` | `double?` | Height constraints |
-| `topCompensation`, `leftCompensation`, `rightCompensation` | `double?` | Layout compensation values |
-| `errorHeightCompensation`, `herlperHeightCompensation` | `double?` | Compensation for error/helper text spacing |
 
 ---
 

@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: any_field
-      sha256: "047344e9276d3350805d3bbbe42ab7346e1cd5ae199526800a2e663abbced033"
+      sha256: "69e7e1a0e70a9ec4d20c3f3354db4cd680cf5c97a65a0a2b64c1116ad3802fbe"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.8"
+    version: "0.1.0"
   async:
     dependency: transitive
     description:
@@ -177,7 +177,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.1.0"
   nested:
     dependency: transitive
     description:

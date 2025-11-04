@@ -63,17 +63,11 @@ class MultiDataPicker<T> extends StatefulWidget {
   final MultiPickerController<T>? controller;
   final List<T>? initialValue;
   final InputDecoration decoration;
-  final EdgeInsets displayPadding;
   final Function(List<T> value)? onChanged;
   final double displaySpacing;
   final double displayRunSpacing;
   final double? minHeight;
   final double? maxHeight;
-  final double? topCompensation;
-  final double? leftCompensation;
-  final double? rightCompensation;
-  final double? errorHeightCompensation;
-  final double? herlperHeightCompensation;
 
   /// A widget that allows the user to select multiple values from a list of options.
   ///
@@ -85,8 +79,6 @@ class MultiDataPicker<T> extends StatefulWidget {
   /// * [controller]: The controller that manages the values selected by the user.
   /// * [initialValue]: The initial values to be displayed in the widget.
   /// * [decoration]: The decoration to be applied to the widget.
-  /// * [displayPadding]: The padding to be applied to the widget.
-  /// * [topCompensation], [leftCompensation], [rightCompensation], [errorHeightCompensation], [herlperHeightCompensation]: The compensations to be applied to the widget.
   /// * [onChanged]: A function that is called when the user selects or deselects a value.
   /// * [displaySpacing]: The spacing between the values displayed in the widget.
   /// * [displayRunSpacing]: The spacing between the values displayed in the widget when they are wrapped to the next line.
@@ -99,12 +91,6 @@ class MultiDataPicker<T> extends StatefulWidget {
     this.controller,
     this.initialValue,
     this.decoration = const InputDecoration(),
-    this.displayPadding = const EdgeInsets.fromLTRB(5, 15, 5, 5),
-    this.topCompensation,
-    this.leftCompensation,
-    this.rightCompensation,
-    this.errorHeightCompensation,
-    this.herlperHeightCompensation,
     this.onChanged,
     this.displaySpacing = 5,
     this.displayRunSpacing = 5,
@@ -216,10 +202,6 @@ class _MultiDataPickerState<T> extends State<MultiDataPicker<T>> {
   @override
   Widget build(BuildContext context) {
     return AnyField<List<T>>(
-      displayPadding: widget.displayPadding,
-      leftCompensation: widget.leftCompensation,
-      rightCompensation: widget.rightCompensation,
-      topCompensation: widget.topCompensation,
       decoration: widget.decoration.copyWith(
         suffixIcon: Padding(
           padding: const EdgeInsets.only(right: 5),
@@ -232,8 +214,6 @@ class _MultiDataPickerState<T> extends State<MultiDataPicker<T>> {
         ),
       ),
       controller: _anyFieldController,
-      errorHeightCompensation: widget.errorHeightCompensation,
-      herlperHeightCompensation: widget.herlperHeightCompensation,
       maxHeight: widget.maxHeight,
       minHeight: widget.minHeight,
       onTap: showPopup,

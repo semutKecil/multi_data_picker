@@ -1,5 +1,4 @@
 import 'package:example/indonesia_locations.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_data_picker/data_display_builder.dart';
 import 'package:multi_data_picker/data_picker_popup_type.dart';
@@ -140,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 20),
                       MultiDataPicker<Map<String, dynamic>>(
                         controller: controller,
                         decoration: InputDecoration(
@@ -150,8 +150,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           errorText: errorText,
                         ),
                         maxHeight: 150,
-                        topCompensation: kIsWeb ? 10 : 15,
-                        displayPadding: EdgeInsets.fromLTRB(5, 10, 5, 5),
                         dataDisplayBuilder: DataDisplayBuilder.string(
                           labelBuilder: (data) {
                             return data['name'] ?? "-";
