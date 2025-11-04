@@ -1,6 +1,8 @@
 /// A Flutter plugin to pick multiple data types such as images, videos, and
 /// documents from the device gallery or take a new photo/video.
 /// run build_runner first before building
+/// dart run build_runner build -d
+/// or
 /// dart run build_runner watch -d
 /// This plugin provides a simple and easy-to-use API to handle the multi data
 /// picking process. It handles the permission request and provides a simple
