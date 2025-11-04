@@ -70,7 +70,7 @@ MultiDataPicker<Map<String, dynamic>>(
 
 | Parameter | Type | Description |
 |----------|------|-------------|
-| `dataDisplayBuilder` | `DataDisplayBuilder<T>` | Defines how each selected item is rendered ([see options](#display-builder)) |
+| `dataDisplayBuilder` | `DataDisplayBuilder<T>` | Defines how each selected item is rendered ([see options](#-display-builder)) |
 | `popupType` | `DataPickerPopupType<T>` | Controls the popup dialog behavior |
 | `isEqual` | `bool Function(T a, T b)?` | Optional equality function for comparing items. **Required when controller not exist** |
 | `controller` | `MultiPickerController<T>?` | Optional controller to manage selected values |
