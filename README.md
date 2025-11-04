@@ -84,10 +84,10 @@ MultiDataPicker<Map<String, dynamic>>(
 
 | Parameter | Type | Description |
 |----------|------|-------------|
-| `dataDisplayBuilder` | `DataDisplayBuilder<T>` | Defines how each selected item is rendered ([see options](#-display-builder)) |
-| `popupType` | `DataPickerPopupType<T>` | Controls the popup dialog behavior |
+| `dataDisplayBuilder` | `DataDisplayBuilder<T>` | Defines how each selected item is rendered ([see details](#-display-builder)) |
+| `popupType` | `DataPickerPopupType<T>` | Controls the popup dialog behavior ([see details](#-popup-types)) |
 | `isEqual` | `bool Function(T a, T b)?` | Optional equality function for comparing items. **Required when controller not exist** |
-| `controller` | `MultiPickerController<T>?` | Optional controller to manage selected values |
+| `controller` | `MultiPickerController<T>?` | Optional controller to manage selected values ([see details](#-multipickercontroller)) |
 | `initialValue` | `List<T>?` | Initial selected values |
 | `decoration` | `InputDecoration` | Input field decoration |
 | `displayPadding` | `EdgeInsets` | Padding around displayed items |
