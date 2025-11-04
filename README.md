@@ -225,7 +225,7 @@ DataPickerPopupType.bottom(
 | Parameter               | Type                                      | Description                                                                 | Used In             |
 |------------------------|-------------------------------------------|-----------------------------------------------------------------------------|---------------------|
 | `loadData`             | `ListDataPickerCallback<T>`               | Required. Callback to load data with filter and previous selection         | All                 |
-| `listDataBuilder`      | `ListDataBuilder<T>`                      | Required. Builder for rendering list items                                 | All                 |
+| `listDataBuilder`      | `ListDataBuilder<T>`                      | Required. Builder for rendering list items  ([see details](#-list-data-builder))                                | All                 |
 | `title`                | `Widget?`                                 | Optional widget for the popup title                                        | All                 |
 | `titleText`            | `String?`                                 | Optional text for the popup title                                          | All                 |
 | `cancelText`           | `String?`                                 | Text for the cancel button                                                 | All                 |
