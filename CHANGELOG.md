@@ -14,8 +14,6 @@
 
 ---
 
-Let me know if you'd like to scaffold a migration guide or update the README to reflect the new usage pattern.
-
 
 ## 0.1.0 - 2025-11-04
 
