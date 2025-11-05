@@ -1,3 +1,11 @@
+## 0.2.2 – 2025-11-05
+
+- Updated `README.md`:
+  - Added **Table of Contents** with shortcut links for easier navigation
+  - Documented how to implement and return results from `loadData` callback
+  - Explained usage of `ListDataPicker.data` and `ListDataPicker.error`
+  - Clarified `hasNext` behavior for infinite scroll support
+
 ## 0.2.1 – 2025-11-05
 
 #### 🎨 UI Updates
