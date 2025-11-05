@@ -20,9 +20,7 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
   - [🧱 Constructor Parameters](#-constructor-parameters)
   - [🧩 Display Builder](#-display-builder)
     - [1. `DataDisplayBuilder.string`](#1-datadisplaybuilderstring)
-      - [Example:](#example)
     - [2. `DataDisplayBuilder.custom`](#2-datadisplaybuildercustom)
-      - [Example:](#example-1)
   - [🪟 Popup Types](#-popup-types)
     - [1. `dialog`](#1-dialog)
     - [2. `page`](#2-page)
@@ -40,7 +38,7 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
     - [🧾 ListDataBuilder Parameters](#-listdatabuilder-parameters)
     - [🧾 ListTileMetadata](#-listtilemetadata)
   - [🎮 MultiPickerController](#-multipickercontroller)
-    - [Example](#example-2)
+    - [Example](#example)
     - [🎮 Controller API](#-controller-api)
   - [🤝 Contributing](#-contributing)
   - [☕ Support This Project](#-support-this-project)
@@ -161,6 +159,21 @@ The `DataDisplayBuilder<T>` sealed class defines how each selected item is rende
 
 Renders each item as a `Chip` with customizable appearance.
 
+```dart
+DataDisplayBuilder.string(
+  labelBuilder: (data) => data['name'] ?? "-",
+  backgroundColor: Colors.blue.shade50,
+  labelStyle: TextStyle(fontWeight: FontWeight.bold),
+  shape: StadiumBorder(),
+  deleteIconColor: Colors.red,
+  deleteIcon: Icon(Icons.close),
+  avatar: CircleAvatar(child: Text("A")),
+  avatarBoxConstraints: BoxConstraints.tight(Size(24, 24)),
+  labelPadding: EdgeInsets.symmetric(horizontal: 8),
+  side: BorderSide(color: Colors.grey),
+)
+```
+
 ---
 
 | Parameter             | Type                          | Description |
@@ -178,36 +191,9 @@ Renders each item as a `Chip` with customizable appearance.
 
 ---
 
-#### Example:
-
-```dart
-DataDisplayBuilder.string(
-  labelBuilder: (data) => data['name'] ?? "-",
-  backgroundColor: Colors.blue.shade50,
-  labelStyle: TextStyle(fontWeight: FontWeight.bold),
-  shape: StadiumBorder(),
-  deleteIconColor: Colors.red,
-  deleteIcon: Icon(Icons.close),
-  avatar: CircleAvatar(child: Text("A")),
-  avatarBoxConstraints: BoxConstraints.tight(Size(24, 24)),
-  labelPadding: EdgeInsets.symmetric(horizontal: 8),
-  side: BorderSide(color: Colors.grey),
-)
-```
-
 ### 2. `DataDisplayBuilder.custom`
 
 Provides full control over rendering via a custom widget builder.
-
----
-
-| Parameter | Type | Description |
-|----------|------|-------------|
-| `builder` | `Widget Function(BuildContext context, T data, void Function() delete)` | Required. Custom widget builder for rendering each item with delete support |
-
----
-
-#### Example:
 
 ```dart
 DataDisplayBuilder.custom(
@@ -224,6 +210,14 @@ DataDisplayBuilder.custom(
   },
 )
 ```
+
+---
+
+| Parameter | Type | Description |
+|----------|------|-------------|
+| `builder` | `Widget Function(BuildContext context, T data, void Function() delete)` | Required. Custom widget builder for rendering each item with delete support |
+
+---
 
 Use this when you need advanced layout or interactivity beyond the default `Chip` UI.
 
