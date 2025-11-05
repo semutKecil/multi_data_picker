@@ -1,6 +1,6 @@
 # 🧮 MultiDataPicker
 
-![Pub Version](https://img.shields.io/pub/v/multi_data_picker) ![Platform](https://img.shields.io/badge/platform-flutter-blue) [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns) [![Donate on Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat)](https://ko-fi.com/M4M81N5IYI)
+![Pub Version](https://img.shields.io/pub/v/multi_data_picker) ![Platform](https://img.shields.io/badge/platform-flutter-blue) [![publish](https://github.com/semutKecil/multi_data_picker/actions/workflows/publish.yml/badge.svg)](https://github.com/semutKecil/multi_data_picker/actions/workflows/publish.yml) [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns) [![Donate on Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat)](https://ko-fi.com/M4M81N5IYI)
 
 `multi_data_picker` is a customizable multi-select widget for Flutter, inspired by the UX of [Select2](https://select2.org/) and architecturally based on the `any_field` pattern. It allows users to select multiple values from dynamic data sources with support for generic types, popup customization (`dialog`, `page`, `bottom`), and external state control via `MultiPickerController`.
 
