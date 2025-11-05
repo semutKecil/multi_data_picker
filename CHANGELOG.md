@@ -21,9 +21,6 @@
 - All `compensation` parameters and layout hacks for vertical alignment.
 - Deprecated `displayPadding` — now handled idiomatically via `contentPadding` in `any_field`.
 
----
-
-
 ## 0.1.0 - 2025-11-04
 
 - Initial release of `multi_data_picker`
