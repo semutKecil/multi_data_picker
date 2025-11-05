@@ -17,8 +17,6 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
   - [📦 Installation](#-installation)
   - [🚀 Usage](#-usage)
     - [🧩 Notes on AnyField Integration](#-notes-on-anyfield-integration)
-      - [🔹 `isDense` is always `true`](#-isdense-is-always-true)
-      - [🔹 Hint alignment for tall children](#-hint-alignment-for-tall-children)
   - [🧱 Constructor Parameters](#-constructor-parameters)
   - [🧩 Display Builder](#-display-builder)
     - [1. `DataDisplayBuilder.string`](#1-datadisplaybuilderstring)
@@ -123,7 +121,7 @@ MultiDataPicker<Map<String, dynamic>>(
 
 `multi_data_picker` is built on top of [`any_field`](https://pub.dev/packages/any_field), which provides the core layout and interaction model. As a result, it inherits several important behaviors:
 
-#### 🔹 `isDense` is always `true`
+`isDense` is always `true`
 
 To maintain compact vertical spacing, `AnyField` sets `InputDecoration.isDense = true` by default. This affects how icons and padding are rendered.
 
@@ -135,15 +133,6 @@ InputDecoration(
   suffixIcon: Icon(Icons.tag, size: 24), // Match native TextField alignment
 )
 ```
-
-#### 🔹 Hint alignment for tall children
-
-Since `AnyField` uses `InputDecorator`, hint text aligns based on the **baseline** of its child. If your picker content is tall (e.g. `Wrap`, `ListView`, or `Column`), you may need to:
-
-- Wrap your content in a `Baseline` widget
-- Or add a `Text(' ')` placeholder to provide a baseline
-
-This ensures the hint text remains vertically centered and consistent with native `TextField` behavior.
 
 ---
 
