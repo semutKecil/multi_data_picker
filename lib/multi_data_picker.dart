@@ -209,7 +209,7 @@ class _MultiDataPickerState<T> extends State<MultiDataPicker<T>> {
             onPressed: () {
               showPopup(_anyFieldController.value);
             },
-            icon: Icon(Icons.arrow_drop_down),
+            icon: Icon(Icons.arrow_drop_down, size: 24),
           ),
         ),
       ),
@@ -235,35 +235,37 @@ class _MultiDataPickerState<T> extends State<MultiDataPicker<T>> {
                 :final labelPadding,
                 :final side,
               ):
-                return Chip(
-                  backgroundColor:
-                      backgroundColor ?? Theme.of(context).colorScheme.primary,
-                  labelStyle:
-                      labelStyle ??
-                      TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        fontSize: 12,
-                      ),
-                  elevation: 0,
-                  avatar: avatar,
-                  avatarBoxConstraints: avatarBoxConstraints,
-                  labelPadding: labelPadding,
-                  visualDensity: VisualDensity.compact,
-                  side: side,
-                  deleteButtonTooltipMessage: "",
-                  shape: shape ?? StadiumBorder(side: BorderSide.none),
-                  deleteIconColor:
-                      deleteIconColor ??
-                      Theme.of(context).colorScheme.onPrimary,
-                  deleteIcon: deleteIcon ?? Icon(Icons.close, size: 16),
-                  onDeleted: () {
-                    _anyFieldController.value = List.from(
-                      _anyFieldController.value ?? [],
-                    )..removeAt(index);
-                  },
-                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  label: Text(labelBuilder(value[index])),
+                return SizedBox(
+                  height: 32,
+                  child: Chip(
+                    backgroundColor: backgroundColor ?? Color(0xFFE4E4E4),
+                    labelStyle:
+                        labelStyle ??
+                        TextStyle(color: Color(0xFF333333), fontSize: 12),
+                    elevation: 0,
+                    avatar: avatar,
+                    avatarBoxConstraints: avatarBoxConstraints,
+                    labelPadding: labelPadding,
+                    visualDensity: VisualDensity.compact,
+                    side: side,
+                    deleteButtonTooltipMessage: "",
+                    shape:
+                        shape ??
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadiusGeometry.circular(5),
+                          side: BorderSide.none,
+                        ),
+                    deleteIconColor: deleteIconColor ?? Color(0xFF555555),
+                    deleteIcon: deleteIcon ?? Icon(Icons.close, size: 16),
+                    onDeleted: () {
+                      _anyFieldController.value = List.from(
+                        _anyFieldController.value ?? [],
+                      )..removeAt(index);
+                    },
+                    padding: EdgeInsets.symmetric(horizontal: 4, vertical: 0),
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    label: Text(labelBuilder(value[index])),
+                  ),
                 );
               case DataDisplayBuilderWidget<T>(:final builder):
                 return builder(context, value[index], () {

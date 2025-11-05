@@ -24,9 +24,11 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
 
 | Fix Height | Dialog Picker | Page Picker |
 |----------|------|-------------|
-| ![Fix Height Bottom](screenshots/multi_picker_fix_height_bottom.gif) | ![Dialog Picker](screenshots/multi_picker_no_border_dialog.gif) | ![Page Picker](screenshots/multi_picker_no_border_page.gif) |
-| Custom | Use Controller |-------------|
-| ![Custom](screenshots/multi_picker_no_border_custom.gif) | ![Use Controller](screenshots/multi_picker_no_border_ctrl.gif) |   |
+| ![Fix Height](screenshots/fix-height-width.gif) | ![Dialog Picker](screenshots/dialog-popup-border.gif) | ![Page Picker](screenshots/page-popup-noborder.gif) |
+
+| Bottom Picker | Custom | With Controller |
+|----------|------|-------------|
+| ![Bottom Picker](screenshots/bottom-popup-border.gif) | ![Custom](screenshots/custom.gif) | ![Controller](screenshots/controller.gif) |
 
 ---
 
@@ -73,6 +75,34 @@ MultiDataPicker<Map<String, dynamic>>(
   ),
 )
 ```
+
+---
+
+### 🧩 Notes on AnyField Integration
+
+`multi_data_picker` is built on top of [`any_field`](https://pub.dev/packages/any_field), which provides the core layout and interaction model. As a result, it inherits several important behaviors:
+
+#### 🔹 `isDense` is always `true`
+
+To maintain compact vertical spacing, `AnyField` sets `InputDecoration.isDense = true` by default. This affects how icons and padding are rendered.
+
+- **If you use `prefixIcon` or `suffixIcon`**, explicitly set their size to `24.0` to match the default `TextField` appearance:
+
+```dart
+InputDecoration(
+  labelText: 'Tags',
+  suffixIcon: Icon(Icons.tag, size: 24), // Match native TextField alignment
+)
+```
+
+#### 🔹 Hint alignment for tall children
+
+Since `AnyField` uses `InputDecorator`, hint text aligns based on the **baseline** of its child. If your picker content is tall (e.g. `Wrap`, `ListView`, or `Column`), you may need to:
+
+- Wrap your content in a `Baseline` widget
+- Or add a `Text(' ')` placeholder to provide a baseline
+
+This ensures the hint text remains vertically centered and consistent with native `TextField` behavior.
 
 ---
 

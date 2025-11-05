@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         isEqual: (a, b) => a["id"] == b["id"],
                         decoration: InputDecoration(
                           labelText: "No Controller",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.location_city, size: 24),
                           hintText: "Pick Multiple Region",
                           helperText: "This is BottomSheet mode with border",
                           border: OutlineInputBorder(
@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: controller,
                         decoration: InputDecoration(
                           labelText: "Multi Select Region",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.location_city, size: 24),
                           hintText: "Pick Multiple Region",
                           helperText: "This is Page mode with no border",
                           errorText: errorText,
@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: controller,
                         decoration: InputDecoration(
                           labelText: "Multi Select Region",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.location_city, size: 24),
                           hintText: "Pick Multiple Region",
                           helperText: "This is Dialog mode with border",
                           border: OutlineInputBorder(
@@ -208,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: controller,
                         decoration: InputDecoration(
                           labelText: "Multi Select Region",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.location_city, size: 24),
                           hintText: "Pick Multiple Region",
                           helperText: "This is BottomSheet mode with border",
                           border: OutlineInputBorder(
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: controller,
                         decoration: InputDecoration(
                           labelText: "Custom Multi Select Region",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.location_city, size: 24),
                           hintText: "Pick Multiple Region",
                           helperText: "This is BottomSheet mode with border",
                           border: OutlineInputBorder(

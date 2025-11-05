@@ -78,23 +78,25 @@ abstract class SelectedTileColor with _$SelectedTileColor {
     Color? hoverBackgroundColor,
     Color? evenHoverBackgroundColor,
   }) {
+    var isDark = Theme.of(context).brightness == Brightness.dark;
+
     return SelectedTileColor(
       backgroundColor:
-          backgroundColor ?? Theme.of(context).colorScheme.primaryContainer,
+          backgroundColor ?? (isDark ? Color(0xFF1565C0) : Color(0xFFBBDEFB)),
       foregroundColor:
           foregroundColor ?? Theme.of(context).colorScheme.onPrimaryContainer,
       evenBackgroundColor:
           evenBackgroundColor ??
-          Theme.of(context).colorScheme.tertiaryContainer,
+          (isDark ? Color(0xFF1976D2) : Color(0xFF90CAF9)),
       evenForegroundColor:
           evenBackgroundColor ??
           Theme.of(context).colorScheme.onTertiaryContainer,
       hoverBackgroundColor:
           evenBackgroundColor ??
-          Theme.of(context).colorScheme.primary.withAlpha(150),
+          (isDark ? Color(0xFF0D47A1) : Color(0xFF64B5F6)),
       evenHoverBackgroundColor:
           evenBackgroundColor ??
-          Theme.of(context).colorScheme.primary.withAlpha(200),
+          (isDark ? Color(0xFF0B3C91) : Color(0xFF42A5F5)),
     );
   }
 

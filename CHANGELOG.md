@@ -1,3 +1,12 @@
+## 0.2.1 – 2025-11-05
+
+#### 🎨 UI Updates
+- Updated chip background and text colors for better contrast and visual consistency with Select2-style tags.
+- Refined list item background colors for normal, hover, selected, and hovered+selected states in both light and dark themes.
+
+#### 📚 Documentation
+- Replaced outdated screenshots in the README to reflect the new visual style and layout improvements.
+
 ## 0.2.0 – 2025-11-04
 
 ### ✨ Added

@@ -103,23 +103,25 @@ abstract class ListDataTileStyle with _$ListDataTileStyle {
     Widget? checkboxIcon,
     Widget? selectedCheckboxIcon,
   }) {
+    var isDark = Theme.of(context).brightness == Brightness.dark;
+
     return ListDataTileStyle(
       backgroundColor: backgroundColor ?? Colors.transparent,
       foregroundColor:
           foregroundColor ?? Theme.of(context).colorScheme.onSurface,
       evenBackgroundColor:
           evenBackgroundColor ??
-          Theme.of(context).colorScheme.onSurface.withAlpha(30),
+          (isDark ? Color(0xFF1E1E1E) : Color(0xFFE0E0E0)),
       evenForegroundColor:
           evenForegroundColor ??
           foregroundColor ??
           Theme.of(context).colorScheme.onSurface,
       hoverBackgroundColor:
           hoverBackgroundColor ??
-          Theme.of(context).colorScheme.primary.withAlpha(50),
+          (isDark ? Color(0xFF2A3A4F) : Color(0xFFE3F2FD)),
       evenHoverBackgroundColor:
           evenHoverBackgroundColor ??
-          Theme.of(context).colorScheme.primary.withAlpha(100),
+          (isDark ? Color(0xFF243447) : Color(0xFFD0EBFF)),
       selectedColor: selectedColor ?? SelectedTileColor.of(context),
       textStyle: textStyle,
       trailingIcon: trailingIcon,
