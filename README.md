@@ -8,6 +8,47 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
 
 ---
 
+## 📘 Table of Contents
+
+- [🧮 MultiDataPicker](#-multidatapicker)
+  - [📘 Table of Contents](#-table-of-contents)
+  - [✨ Features](#-features)
+  - [📸 Demo](#-demo)
+  - [📦 Installation](#-installation)
+  - [🚀 Usage](#-usage)
+    - [🧩 Notes on AnyField Integration](#-notes-on-anyfield-integration)
+      - [🔹 `isDense` is always `true`](#-isdense-is-always-true)
+      - [🔹 Hint alignment for tall children](#-hint-alignment-for-tall-children)
+  - [🧱 Constructor Parameters](#-constructor-parameters)
+  - [🧩 Display Builder](#-display-builder)
+    - [1. `DataDisplayBuilder.string`](#1-datadisplaybuilderstring)
+      - [Example:](#example)
+    - [2. `DataDisplayBuilder.custom`](#2-datadisplaybuildercustom)
+      - [Example:](#example-1)
+  - [🪟 Popup Types](#-popup-types)
+    - [1. `dialog`](#1-dialog)
+    - [2. `page`](#2-page)
+    - [3. `bottom`](#3-bottom)
+    - [🪟 Popup Type Parameters](#-popup-type-parameters)
+  - [🔄 Handling Data Loading \& Infinite Scroll](#-handling-data-loading--infinite-scroll)
+    - [🧠 Parameters](#-parameters)
+    - [✅ Returning Data](#-returning-data)
+    - [❌ Returning Error](#-returning-error)
+    - [🔁 Infinite Scroll Behavior](#-infinite-scroll-behavior)
+    - [🧪 Example](#-example)
+  - [🧾 List Data Builder](#-list-data-builder)
+    - [1. `ListDataBuilder.string`](#1-listdatabuilderstring)
+    - [2. `ListDataBuilder.custom`](#2-listdatabuildercustom)
+    - [🧾 ListDataBuilder Parameters](#-listdatabuilder-parameters)
+    - [🧾 ListTileMetadata](#-listtilemetadata)
+  - [🎮 MultiPickerController](#-multipickercontroller)
+    - [Example](#example-2)
+    - [🎮 Controller API](#-controller-api)
+  - [🤝 Contributing](#-contributing)
+  - [☕ Support This Project](#-support-this-project)
+  - [📄 License](#-license)
+
+
 ## ✨ Features
 
 - ✅ Generic support for any data type `T`
@@ -132,6 +173,7 @@ The `DataDisplayBuilder<T>` sealed class defines how each selected item is rende
 Renders each item as a `Chip` with customizable appearance.
 
 ---
+
 | Parameter             | Type                          | Description |
 |----------------------|-------------------------------|-------------|
 | `labelBuilder`        | `String Function(T data)`      | Required. Builds the label text for each item |
@@ -144,6 +186,7 @@ Renders each item as a `Chip` with customizable appearance.
 | `avatarBoxConstraints`| `BoxConstraints?`              | Constraints for the avatar widget |
 | `labelPadding`        | `EdgeInsetsGeometry?`          | Padding around the label text |
 | `side`                | `BorderSide` (default: none)   | Border side configuration |
+
 ---
 
 #### Example:
@@ -168,9 +211,11 @@ DataDisplayBuilder.string(
 Provides full control over rendering via a custom widget builder.
 
 ---
+
 | Parameter | Type | Description |
 |----------|------|-------------|
 | `builder` | `Widget Function(BuildContext context, T data, void Function() delete)` | Required. Custom widget builder for rendering each item with delete support |
+
 ---
 
 #### Example:
@@ -247,7 +292,7 @@ DataPickerPopupType.bottom(
 
 | Parameter               | Type                                      | Description                                                                 | Used In             |
 |------------------------|-------------------------------------------|-----------------------------------------------------------------------------|---------------------|
-| `loadData`             | `ListDataPickerCallback<T>`               | Required. Callback to load data with filter and previous selection         | All                 |
+| `loadData`             | `ListDataPickerCallback<T>`               | Required. Callback to load data with filter and previous selection ([see details](#-handling-data-loading--infinite-scroll))         | All                 |
 | `listDataBuilder`      | `ListDataBuilder<T>`                      | Required. Builder for rendering list items  ([see details](#-list-data-builder))                                | All                 |
 | `title`                | `Widget?`                                 | Optional widget for the popup title                                        | All                 |
 | `titleText`            | `String?`                                 | Optional text for the popup title                                          | All                 |
@@ -265,6 +310,72 @@ DataPickerPopupType.bottom(
 - `searchAutoFocus` defaults to `false` for `dialog` and `bottom`, and `true` for `page`.
 - `withCancelButton` defaults to `false` for both `page` and `bottom`.
 - `width` is only available in `dialog`; `height` is available in `dialog` and `bottom`.
+
+---
+
+## 🔄 Handling Data Loading & Infinite Scroll
+
+To load data dynamically in `multi_data_picker`, you must provide a `loadData` callback of type:
+
+```dart
+typedef ListDataPickerCallback<T> = FutureOr<ListDataPicker<T>> Function(String filter, List<T> previous);
+```
+
+This callback is triggered whenever the picker needs to fetch new data — either on initial load or during infinite scroll.
+
+### 🧠 Parameters
+
+- `filter`: A string used to filter the data (e.g. search query).
+- `previous`: The list of previously loaded items, useful for pagination or deduplication.
+
+---
+
+### ✅ Returning Data
+
+To return a successful result, use:
+
+```dart
+return ListDataPicker.data(
+  fetchedItems,
+  hasNext: true, // or false if no more data
+);
+```
+
+- `fetchedItems`: A list of items of type `T`.
+- `hasNext`: Set to `true` if more data is available (enables infinite scroll). Set to `false` to stop loading.
+
+---
+
+### ❌ Returning Error
+
+If something goes wrong (e.g. network error, invalid response), return:
+
+```dart
+return ListDataPicker.error("Failed to load data");
+```
+
+This will display an error state in the picker UI.
+
+---
+
+### 🔁 Infinite Scroll Behavior
+
+When `hasNext` is `true`, the picker will automatically trigger `loadData` again when the user scrolls to the bottom. This allows seamless infinite scrolling with paginated data.
+
+---
+
+### 🧪 Example
+
+```dart
+Future<ListDataPicker<User>> loadUsers(String filter, List<User> previous) async {
+  try {
+    final response = await api.fetchUsers(filter, offset: previous.length);
+    return ListDataPicker.data(response.items, hasNext: response.hasMore);
+  } catch (e) {
+    return ListDataPicker.error("Unable to load users");
+  }
+}
+```
 
 ---
 
