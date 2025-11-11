@@ -2,15 +2,36 @@
 
 ![Pub Version](https://img.shields.io/pub/v/multi_data_picker) ![Platform](https://img.shields.io/badge/platform-flutter-blue) [![publish](https://github.com/semutKecil/multi_data_picker/actions/workflows/publish.yml/badge.svg)](https://github.com/semutKecil/multi_data_picker/actions/workflows/publish.yml) [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns) [![Donate on Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat)](https://ko-fi.com/M4M81N5IYI)
 
-`multi_data_picker` is a customizable multi-select widget for Flutter, inspired by the UX of [Select2](https://select2.org/) and architecturally based on the `any_field` pattern. It allows users to select multiple values from dynamic data sources with support for generic types, popup customization (`dialog`, `page`, `bottom`), and external state control via `MultiPickerController`.
+**`multi_data_picker`** is a customizable multi-select widget for Flutter, inspired by Select2. It supports dynamic data, generic types, popup customization (dialog, page, bottom), and external control via `MultiPickerController`.
 
-Designed to integrate seamlessly into form layouts, it supports full `TextField` styling via `InputDecoration`, making it visually consistent with standard Flutter input fields. Ideal for filter panels, tag selectors, and data-driven workflows.
+Designed for seamless form integration with full `InputDecoration` styling—ideal for filters, tag selectors, and data-driven UIs.
+
+---
+
+## 🤝 How to Contribute
+
+Before diving into the docs, here’s how you can support the plugin:
+
+- 🐞 **Found a bug or have an idea?**  
+  Open an issue on [GitHub](https://github.com/semutKecil/multi_data_picker/issues)
+
+- 🔧 **Got time to fix it?**  
+  Fork the repo and submit a pull request—we’ll review it fast
+
+- 💖 **Want to support the project?**  
+  If this plugin makes your life easier, a small donation helps us keep building and improving it for everyone 
+  
+  [![Donate on Saweria](https://img.shields.io/badge/Donate-Saweria-orange)](https://saweria.co/hrlns) [![Donate on Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat)](https://ko-fi.com/M4M81N5IYI)
+
+- 👍 **Like what you see?**  
+  Smash the thumbs-up on pub.dev—it helps more devs discover us!
 
 ---
 
 ## 📘 Table of Contents
 
 - [🧮 MultiDataPicker](#-multidatapicker)
+  - [🤝 How to Contribute](#-how-to-contribute)
   - [📘 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [📸 Demo](#-demo)
@@ -40,8 +61,6 @@ Designed to integrate seamlessly into form layouts, it supports full `TextField`
   - [🎮 MultiPickerController](#-multipickercontroller)
     - [Example](#example)
     - [🎮 Controller API](#-controller-api)
-  - [🤝 Contributing](#-contributing)
-  - [☕ Support This Project](#-support-this-project)
   - [📄 License](#-license)
 
 
@@ -453,23 +472,6 @@ MultiDataPicker<Map<String, dynamic>>(
 | `deselect`     | `void Function(T item)`                                | Removes an item from the selection if present |
 | `toggle`       | `void Function(T item)`                                | Toggles selection state of an item |
 | `clear`        | `void Function()`                                      | Clears all selected items |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Feel free to open issues, submit pull requests, or suggest improvements.
-
-```bash
-git clone https://github.com/your-org/multi_data_picker.git
-```
----
-
-## ☕ Support This Project
-
-If you find `multi_data_picker` helpful, consider supporting its development:
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M81N5IYI)
 
 ---
 

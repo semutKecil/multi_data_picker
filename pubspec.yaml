@@ -1,6 +1,6 @@
 name: multi_data_picker
 description: A flexible multi-select widget for Flutter with popup picker, controller support, and TextField styling.
-version: 0.2.2
+version: 0.2.3
 homepage: https://github.com/semutKecil/multi_data_picker
 repository: https://github.com/semutKecil/multi_data_picker
 issue_tracker: https://github.com/semutKecil/multi_data_picker/issues

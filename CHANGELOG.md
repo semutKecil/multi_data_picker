@@ -1,3 +1,9 @@
+## 0.2.3 – 2025-11-11
+
+- Updated `README.md`:
+  - Make description shorter
+  - Update how to contribute section
+
 ## 0.2.2 – 2025-11-05
 
 - Updated `README.md`:
